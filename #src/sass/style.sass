@@ -1,0 +1,313 @@
+@import "base.sass"
+
+.real-val
+    display: none
+
+.circle 
+    display: block;
+    float: left;
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+.num
+    grid-column: 1/2;
+    grid-row: 1/2;
+    color: white;
+    font-size: 2em;
+    
+circle 
+    position: relative
+    z-index: 1222
+    fill: transparent;
+    stroke: #182132;
+    stroke-width: 7;
+    stroke-dasharray: 132px 527px;
+
+circle:nth-child(2n) 
+  fill: rgba(0,0,0,0);
+  stroke: #db3497;
+  stroke-width: 15;
+
+
+.diagram
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  width: -moz-fit-content;
+
+
+#filter-image-wrapper
+    min-height: 310px
+.twentytwenty-handle, .ui-slider-handle
+    width: 28px !important;
+    height: 28px !important
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTQgNTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU0IDU0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6IzBGODhDQTt9LnN0MXtmaWxsOm5vbmU7c3Ryb2tlOiNGRkZGRkY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fTwvc3R5bGU+PGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iMjciIGN5PSIyNyIgcj0iMjciLz48bGluZSBjbGFzcz0ic3QxIiB4MT0iMjcuMiIgeTE9IjE0LjQiIHgyPSIyNy4yIiB5Mj0iNDAiLz48bGluZSBjbGFzcz0ic3QxIiB4MT0iMzYuMiIgeTE9IjE0LjQiIHgyPSIzNi4yIiB5Mj0iNDAiLz48bGluZSBjbGFzcz0ic3QxIiB4MT0iMTguMiIgeTE9IjE0LjQiIHgyPSIxOC4yIiB5Mj0iNDAiLz48L3N2Zz4=) !important
+    background-size: cover;
+    margin-left: -16px;
+    border-radius: 100%;
+    *
+        display: none
+.ui-slider-handle
+    top: 0.2em !important;
+
+.time-slider__controls
+    justify-content: center !important
+    margin-top: 3rem !important
+
+
+.twentytwenty-horizontal .twentytwenty-handle::before 
+    margin-bottom: 17px;
+
+.twentytwenty-horizontal .twentytwenty-handle::after
+    margin-top: 19px;
+
+#timer-range
+    width: 70%
+    margin: 0 auto
+
+main
+    display: grid
+    place-items: center 
+    height: 97vh
+    @media screen and ( max-width: $mobile )
+        height: unset
+    
+
+.test
+    width: 90%
+    max-width: 1024px
+    min-height: 570px
+    margin: 0 auto
+    border: 5px solid $m-border
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1)
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    background: white
+
+    @media screen and ( max-width: $mobile )
+        width: 100%
+        border: none;
+        min-height: unset
+        box-shadow: none
+
+
+
+
+    &__footer
+        padding: 15px 27px 18px
+        border-top: 1px solid $grey
+        width: 100%
+        
+        display: flex
+        justify-content: space-between
+        gap: 61px
+        @media screen and ( max-width: $mobile )
+            flex-direction: column
+            gap: 15px
+
+            padding: 10px 15px 10px
+
+    &-progressbar
+        display: flex
+        flex-direction: column
+        gap: 13px
+        width: -moz-available
+        width: -webkit-fill-available
+
+        &__text
+            display: flex
+            gap: 7px
+            align-items: baseline
+
+        &__ready
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: 0em;
+            text-align: left;
+
+        &__percent
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: $purple
+            
+            &::after
+                content: "%"
+            
+        &__line
+            height: 8px
+            border-radius: 4px
+            background: $grey
+            position: relative
+
+            &-ready
+                background: $purple
+                    
+                height: 8px
+                border-radius: 4px
+
+                position: absolute
+                left: 0
+                top: 0
+                transition: .3s
+    
+    &__footer-btns
+        display: flex
+        gap: 16px
+
+
+        &>*
+            border-radius: 25px
+            cursor: pointer
+
+
+        .back-btn
+            display: grid
+            place-items: center
+            width: 50px
+            height: 50px
+            border: 1px solid $label-border
+
+        .next-btn
+            padding: 0 22px 0 36px
+            display: flex
+            gap: 8px
+            background: $purple
+            color: white
+            align-items: center
+            border: 1px solid transparent
+
+
+        &>*.disable
+            background: $grey
+            cursor: context-menu
+            border: 1px solid transparent
+            svg path
+                fill: white
+
+    &__result
+        margin: auto
+        text-align: center
+        display: flex
+        flex-direction: column
+        justify-content: center
+        min-height: 200px
+        gap: 12px
+
+        &-main-text
+            font-size: 28px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 33px;
+            letter-spacing: 0em;
+
+        &-end
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 21px;
+            letter-spacing: 0em;
+
+
+.question
+    padding: 27px
+
+    @media screen and ( max-width: $mobile )
+        padding: 20px 15px 20px
+
+    &__title
+        font-size: 28px
+        font-style: normal
+        font-weight: 700
+        line-height: 33px
+        letter-spacing: 0em
+        text-align: left
+        margin-bottom: 13px
+
+        display: flex
+        flex-direction: column
+        gap: 13px
+
+        @media screen and ( max-width: $mobile )
+            font-size: 25px
+            line-height: 28px
+
+    &__checkboxes-info
+        padding: 5px 12px 6px
+        background: $purple
+        border: 1px solid $purple-border;
+        box-sizing: border-box;
+        border-radius: 4px;
+        color: white
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 12px;
+        letter-spacing: 0em;
+        text-align: left;
+        width: fit-content
+
+        display: none
+        margin-bottom: 2px
+    
+    &--with-checkboxes .question__checkboxes-info
+        display: block
+
+
+
+    &__body
+        border: 1px solid transparent
+        form
+            margin-top: 15px
+            display: grid
+            grid-template-columns: 1fr 1fr
+            gap: 23px 24px
+
+            @media screen and ( max-width: $mobile )
+                grid-template-columns: 100%
+
+            input
+                display: none
+
+            .custom-radio
+                width: 100%
+                border: 1px solid $label-border
+                border-radius: 4px
+                padding: 14px 16px
+                display: flex
+                align-items: center
+                gap: 13px
+
+                svg
+                    width: 22px
+                    display: grid
+                    place-items: center
+
+                &__text
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 19px;
+                    letter-spacing: 0em;
+                    text-align: left;
+
+
+
+        input + label .checked
+            display: none
+
+        input:checked + label .checked
+            display: block
+        input:checked + label .not-checked
+            display: none
+
+
+
