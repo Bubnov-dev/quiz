@@ -21,6 +21,30 @@ body {
   display: none !important;
 }
 
+.position {
+  position: absolute;
+}
+
+.position-left {
+  left: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10%;
+}
+
+.position-right {
+  right: 10%;
+}
+
+.position-right .brand-template {
+  position: absolute;
+  bottom: 10%;
+}
+
 .real-val {
   display: none;
 }

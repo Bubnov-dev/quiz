@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    var brands = new Map([
+        ["Crizal Alize" , {
+            logo : "img/essilor_sg.png",
+            title : "qwertyui",
+            icons : []
+        }]
+    ]);
     var combinations = [
         {
             no: [{
@@ -21,9 +28,19 @@ $(document).ready(function () {
             }],
             less: [],
             value: "Singe vision"
-        }
+        },
+      
     ]
         
+    var template = function(logo, title, icons){
+        let iconsFlex = "";
+        icons.forEach(icon => {
+            iconsFlex+='<img src="'+icon+'" alt="">';
+        });
+        return '<div class="brand-template"><div class="brand-template__logo"><img src="'+logo+'" alt=""></div><div class="brand-template__tite">'+title+'</div><div class="brand-template__icons">'+iconsFlex+'</div></div>';
+    }
+
+
     $("#mainpage_button").on("click", function(){
         $(".questions").removeClass("hidden")
         $(".js-lens-builder__start-screen").addClass("hidden")
@@ -50,6 +67,17 @@ $(document).ready(function () {
          }
     });
 
+    var Circle = function(sel, val){
+        var el = document.querySelector(sel);
+            var valEl = parseFloat(el.innerHTML);
+            
+            valEl = val*526/12 +1 ;
+
+            el.innerHTML = ' <svg width="178" height="178"><circle transform="rotate(-90)" style="stroke-dasharray:'+valEl+'px 526px;" r="84" cx="-89" cy="89" /></svg>';
+            
+    };
+    
+    Circle('.circle');
     $(".kids-input").on("click", function(){
         let title = "ГДЕ ВАШ РЕБЕНОК ПРОВОДИТ БОЛЬШУЮ ЧАСТЬ СВОЕГО ДНЯ?"
         $("#step-3").find(".lens-builder__question-title").text(title)
@@ -63,17 +91,7 @@ $(document).ready(function () {
 
     });
 
-    var Circle = function(sel, val){
-        var el = document.querySelector(sel);
-            var valEl = parseFloat(el.innerHTML);
-            
-            valEl = val*526/12 +1 ;
-
-            el.innerHTML = ' <svg width="178" height="178"><circle transform="rotate(-90)" style="stroke-dasharray:'+valEl+'px 526px;" r="84" cx="-89" cy="89" /></svg>';
-            
-    };
     
-    Circle('.circle');
 
     let question = 0;
     let questions = $(".question");
@@ -129,33 +147,51 @@ $(document).ready(function () {
         catch (TypeError) {  
 
         }
-        refreshProgress()
       
     }
 
-    function refreshProgress(){
-        let widthAll = $(".test-progressbar").width();
-        let ratio = question/questionsLength;
-        let widthProgress = widthAll * ratio;
-        let percent = ratio*100;
-        $(".test-progressbar__percent").text(Math.round(percent));
-        $(".test-progressbar__line-ready").width(widthProgress)
-
-    }
-
+ 
     function getResult(){
-        points = 0;
         let checkeds = $("input:checked");
         let rvals = $(".real-val");
         let vals = [];
-        let i=0
+        // console.log(checkeds)
+        // console.log(rvals)
         checkeds.each(function( index, el ) {
-            vals.push({name : el.getAttribute("name"), val : $(el).val()});
+            vals.push({name : el.getAttribute("name"), val : $(el).val(), rName : "-1"});
         });
 
 
         rvals.each(function( index, el ) {
-            vals.push({name : el.getAttribute("data-name"), val : $(el).text()});
+            vals.push({name : el.getAttribute("data-name"), val : $(el).text(), rName : "-1"});
+        });
+
+        vals.forEach(val => {
+            if (val.name == "in-comp"){
+                let text = "Часов перед компьютером: " + val.val;
+            }
+            else if (val.name == "most-day"){
+                if (val.val<0.15){
+                    console.log("Весь день на улице")
+                }
+                else if (val.val<0.35){
+                    console.log("В основном на улице");
+                }
+                else if (val.val<0.65){
+                    console.log("Часть времени в помещении, часть – на улице");
+                }
+                else if (val.val<0.85){
+                    console.log("В основном в помещении")
+                }
+                else{
+                    console.log("Весь день в помещении")
+                }
+
+            }
+            else{
+                console.log($('[name="'+val.name+'"][value="'+val.val+'"]+label span').html());
+            }
+            
         });
 
         console.log(vals)
@@ -215,7 +251,6 @@ $(document).ready(function () {
                 element.less.forEach(theless => {
                     tmpRes = false
                     vals.forEach(value => {
-                        console.log(value)
                         if (theless.name == value.name){
                             if (value.val < theless.val){
                                 tmpRes = true;
@@ -229,8 +264,13 @@ $(document).ready(function () {
             }
             console.log (resNo , resYes , resMore , resLess)
 
+            $()
+
             if (resNo && resYes && resMore && resLess){
                 console.log(element.value)
+                $('[data-brand="'+element.value+'"]').removeClass("hidden")
+                console.log(brands.get(element.value))
+                $(".position-left").html(template(brands.get(element.value).logo, brands.get(element.value).title, brands.get(element.value).icons))
             }
         });
 
