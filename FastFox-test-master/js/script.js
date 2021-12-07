@@ -160,9 +160,6 @@ $(document).ready(function () {
     })
 
     $(".twentytwenty-handle").on("mouseout", function(event){
-        console.log("mouiseout!!!")
-        console.log( $(this).parent().find(".real-val"))
-        // console.log($(this).css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width())
         $(this).parent().find(".real-val").html($(this).css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width());
     })
 
@@ -237,7 +234,6 @@ $(document).ready(function () {
             question += Number(toskip)
         }
         if (questionsLength <= question){
-            console.log("result")
             $(".questions").addClass("hidden");
             $(".test__result").removeClass("hidden");
             getResult();
@@ -257,9 +253,6 @@ $(document).ready(function () {
                 no_overlay: true
             });
             $(".twentytwenty-handle").on("mouseout", function(event){
-                console.log("mouiseout!!!")
-                console.log( $(this).parent().find(".real-val"))
-                // console.log($(this).css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width())
                 $(this).parent().find(".real-val").html($(this).css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width());
             })
             
@@ -280,50 +273,48 @@ $(document).ready(function () {
         // console.log(checkeds)
         // console.log(rvals)
         checkeds.each(function( index, el ) {
-            vals.push({name : el.getAttribute("name"), val : $(el).val(), rName : "-1"});
+            vals.push({name : el.getAttribute("name"), val : $(el).val()});
         });
 
 
         rvals.each(function( index, el ) {
-            vals.push({name : el.getAttribute("data-name"), val : $(el).text(), rName : "-1"});
+            vals.push({name : el.getAttribute("data-name"), val : $(el).text()});
         });
 
-        vals.forEach(val => {
-            if (val.name == "in-comp"){
-                let text = "Часов перед компьютером: " + val.val;
-            }
-            else if (val.name == "most-day"){
-                if (val.val<0.15){
-                    console.log("Весь день на улице")
-                }
-                else if (val.val<0.35){
-                    console.log("В основном на улице");
-                }
-                else if (val.val<0.65){
-                    console.log("Часть времени в помещении, часть – на улице");
-                }
-                else if (val.val<0.85){
-                    console.log("В основном в помещении")
-                }
-                else{
-                    console.log("Весь день в помещении")
-                }
+        // vals.forEach(val => {
+        //     if (val.name == "in-comp"){
+        //         let text = "Часов перед компьютером: " + val.val;
+        //     }
+        //     else if (val.name == "most-day"){
+        //         if (val.val<0.15){
+        //             console.log("Весь день на улице")
+        //         }
+        //         else if (val.val<0.35){
+        //             console.log("В основном на улице");
+        //         }
+        //         else if (val.val<0.65){
+        //             console.log("Часть времени в помещении, часть – на улице");
+        //         }
+        //         else if (val.val<0.85){
+        //             console.log("В основном в помещении")
+        //         }
+        //         else{
+        //             console.log("Весь день в помещении")
+        //         }
 
-            }
-            else{
-                console.log($('[name="'+val.name+'"][value="'+val.val+'"]+label span').html());
-            }
+        //     }
+        //     else{
+        //         console.log($('[name="'+val.name+'"][value="'+val.val+'"]+label span').html());
+        //     }
             
-        });
+        // });
 
         console.log(vals)
         let lastValName = vals[0].name;
-        console.log(lastValName)
         let list = "<li>"
         let i =0;
         vals.forEach(val => {
             if (i!=0){
-                console.log(val.name)
                 if (val.name != lastValName){
                     list = list  + "</li><li>"
                 }
@@ -377,6 +368,8 @@ $(document).ready(function () {
 
                     vals.forEach(value => {
                         // console.log(value)
+                        console.log("no: " + JSON.stringify(theNo) + " " + JSON.stringify(value))
+
                         if (JSON.stringify(theNo) == JSON.stringify(value)){
                             resNo = false
                         }
@@ -389,6 +382,7 @@ $(document).ready(function () {
                     let tmpRes = false
 
                     vals.forEach(value => {
+                        console.log("yes: " + JSON.stringify(theYes) + " " + JSON.stringify(value))
                         if (JSON.stringify(theYes) == JSON.stringify(value)){
                             tmpRes = true;
                         }
@@ -458,7 +452,7 @@ $(document).ready(function () {
                 
             }
         });
-
+        console.log(resutSet)
     }
 
     nextBtn.on('click', function() {
