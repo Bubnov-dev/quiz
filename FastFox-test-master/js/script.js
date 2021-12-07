@@ -150,6 +150,9 @@ $(document).ready(function () {
         });
         return '<div class="brand-template-wrapper"><div class="brand-template"><div class="brand-template__logo"><img src="'+logo+'" alt=""></div><div class="brand-template__title">'+title+'</div><div class="brand-template__icons">'+iconsFlex+'</div></div></div>';
     }
+    var templateMobile = function(logo){
+        return '<div class="brand-logo-mobile"><img src="'+logo+'" alt=""></div>';
+    }
 
     
     $("#mainpage_button").on("click", function(){
@@ -454,6 +457,8 @@ $(document).ready(function () {
                         $(".position-left .position-wrapper").html($(".position-left .position-wrapper").html() + template(brands.get(element.value).logo, brands.get(element.value).title, brands.get(element.value).icons))
                     
                     }
+                    $(".position-mobile").html($(".position-mobile").html()+ templateMobile(brands.get(element.value).logo))
+
                     i++;   
                 }
                 

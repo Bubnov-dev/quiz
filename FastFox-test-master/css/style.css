@@ -21,6 +21,10 @@ body {
   display: none !important;
 }
 
+.image-switcher__image--mobile {
+  display: none !important;
+}
+
 .fa-home {
   width: 104px;
   display: inline-block;
@@ -84,6 +88,23 @@ body {
 
 .brand-template svg path {
   fill: white;
+}
+
+.position-mobile {
+  position: absolute;
+  right: 5vw;
+  z-index: 9999;
+  height: 100%;
+  display: none;
+  padding: 13vw 0 24vw;
+}
+
+.position-mobile .brand-logo-mobile {
+  width: 30vw;
+}
+
+.position-mobile .brand-logo-mobile img {
+  max-width: 100%;
 }
 
 .position {
@@ -245,6 +266,26 @@ circle:nth-child(2n) {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 960px) {
+  .image-switcher__image--mobile {
+    display: block !important;
+  }
+
+  .image-switcher__image--desktop {
+    display: none !important;
+  }
+
+  .position-mobile {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 1rem;
+  }
+
+  .position {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 768px) {
   body {
     background: white;
@@ -253,6 +294,14 @@ circle:nth-child(2n) {
 @supports (-webkit-appearance:none){
 #timer-range::before{background-image:url(../img/timer.webp)}
 .twentytwenty-handle,.ui-slider-handle{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTQgNTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU0IDU0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6IzBGODhDQTt9LnN0MXtmaWxsOm5vbmU7c3Ryb2tlOiNGRkZGRkY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7fTwvc3R5bGU+PGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iMjciIGN5PSIyNyIgcj0iMjciLz48bGluZSBjbGFzcz0ic3QxIiB4MT0iMjcuMiIgeTE9IjE0LjQiIHgyPSIyNy4yIiB5Mj0iNDAiLz48bGluZSBjbGFzcz0ic3QxIiB4MT0iMzYuMiIgeTE9IjE0LjQiIHgyPSIzNi4yIiB5Mj0iNDAiLz48bGluZSBjbGFzcz0ic3QxIiB4MT0iMTguMiIgeTE9IjE0LjQiIHgyPSIxOC4yIiB5Mj0iNDAiLz48L3N2Zz4=) !important}
+}
+
+ @media screen and (max-width: 960px){
+
+@supports (-webkit-appearance:none){
+
+}
+
 }
 
  @media screen and (max-width: 768px){
