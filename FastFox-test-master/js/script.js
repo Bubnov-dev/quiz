@@ -36,7 +36,7 @@ $(document).ready(function () {
             ]
         }],
         ["Crizal Alize" , {
-            logo : "img/logos/Essilor_LogoProduct_Crizal_AlizeUV_White",
+            logo : "img/logos/Essilor_LogoProduct_Crizal_AlizeUV_White.png",
             title : "Защита от ультрафиолета и 5 врагов прозрачности линзы",
             icons : [
                 '<?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 19.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="Layer_12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"	 viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve"><style type="text/css">	.st0{fill:#0082CA;}</style><g>	<g>		<path class="st0" d="M20.5,31.3c-0.4,0-0.8,0-1.1,0c-0.3,0-0.7,0-1,0c-3.5,0-6-1-8-3.4C9.6,27,8.9,25,8.3,22.5			c-0.5-2.2-0.8-4.4-0.7-5.6c0.1-1,0.7-3.3,5-4.4c6.2-1.4,15-0.4,15.1-0.4l0,0c2.8,0.3,4.6,1.2,5.5,2.5c0.7,1,0.5,1.9,0.5,2.1			c0,0.5-0.5,6.8-2.8,10.8C28.8,31,24.2,31.3,20.5,31.3z M20.9,12.4c-2.6,0-5.6,0.2-8.2,0.8c-3.9,1-4.4,3.2-4.5,3.8			c-0.2,2.3,1.1,8.6,2.7,10.5c1.9,2.2,4.1,3.2,7.5,3.2c0.3,0,0.7,0,1,0c3.7,0,8.8,0.1,10.9-3.5c2.3-4,2.7-10.5,2.7-10.5l0-0.1			c0,0,0.2-0.8-0.4-1.7c-0.8-1.1-2.5-1.9-5-2.2C27.5,12.7,24.6,12.4,20.9,12.4z"/>		<path class="st0" d="M15.4,28.2c-2.5,0-3.2-2.3-3.3-3.5l0-0.2l17.4-12c0.1-0.1,0.3-0.1,0.5,0.1c0.1,0.1,0.1,0.3-0.1,0.5L12.7,24.9			c0.1,0.6,0.5,2.7,2.7,2.7c5.5-3.6,17.6-12.2,17.7-12.3c0.1-0.1,0.3-0.1,0.5,0.1c0.1,0.1,0.1,0.3-0.1,0.5			c-0.1,0.1-12.3,8.8-17.8,12.4l-0.1,0l-0.1,0C15.5,28.2,15.4,28.2,15.4,28.2z"/>		<path class="st0" d="M19.6,29.6c-1,0-2.1-0.4-2.2-0.5l-0.6-0.2L33,17.8c0.1-0.1,0.3-0.1,0.4,0.1c0.1,0.1,0.1,0.3-0.1,0.4			L18.2,28.7c0.7,0.2,1.7,0.4,2.2,0c3.6-2.7,12.2-8.6,12.2-8.7c0.1-0.1,0.3-0.1,0.4,0.1c0.1,0.1,0.1,0.3-0.1,0.5			c-0.1,0.1-8.6,5.9-12.2,8.7l0,0C20.5,29.5,20,29.6,19.6,29.6z"/>	</g>	<path class="st0" d="M36.1,12.3c-3.5,0-6.2-2.8-6.2-6.2c0,3.5-2.8,6.2-6.2,6.2c3.5,0,6.2,2.8,6.2,6.2		C29.9,15.1,32.7,12.3,36.1,12.3z"/></g></svg>',
@@ -82,9 +82,7 @@ $(document).ready(function () {
                 {name: "vision-challenge-age", val: "45+"}
             ],
             more: [],
-            less: [{
-                name: "in-comp", val: 3
-            }],
+            less: [],
             value: "Varilux"
         },
         {
@@ -94,7 +92,7 @@ $(document).ready(function () {
             yes: [],
             more: [],
             less: [{
-                name: "most-day", val: 85
+                name: "most-day", val: 0.85
             }],
             value: "Transitions"
         },
@@ -401,6 +399,8 @@ $(document).ready(function () {
                     tmpRes = false
                     vals.forEach(value => {
                         if (theMore.name == value.name){
+                            console.log("more : " + value.val+ " " + theMore.val);
+
                             if (value.val > theMore.val){
                                 tmpRes = true;
                             }
@@ -418,6 +418,7 @@ $(document).ready(function () {
                     tmpRes = false
                     vals.forEach(value => {
                         if (theless.name == value.name){
+                            console.log ("less: " + value.val + " " + theless.val);
                             if (value.val < theless.val){
                                 tmpRes = true;
                             }
