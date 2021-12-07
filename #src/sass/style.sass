@@ -1,4 +1,28 @@
 @import "base.sass"
+.fa-home::before 
+    content: "\f015";
+
+#timer-range    
+    position: relative;
+    border: none
+#timer-range::before
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    left: 0;
+    bottom: -5px;
+    background-image: url(../img/timer.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+
+
+
+.ui-slider-horizontal .ui-slider-handle 
+    top: -.3em;
+    margin-left: -1.1em !important;
+
 .brand-template
     &__logo
         max-width: 150px

@@ -42,15 +42,83 @@ $(document).ready(function () {
     ]);
     var combinations = [
         {
-            no: [{
-                name: "vision-challenge", val: "kids"
-            }],
+            no: [
+                {name: "vision-challenge", val: "kids"},
+                {name: "vision-challenge-age", val: "45+"}
+            ],
             yes: [],
+            more: [],
+            less: [],
+            value: "EyeZen"
+        },
+        {
+            no: [
+                {name: "vision-challenge", val: "kids"},
+                
+            ],
+            yes: [
+                {name: "vision-challenge-age", val: "45+"}
+            ],
             more: [],
             less: [{
                 name: "in-comp", val: 3
             }],
-            value: "EyeZen"
+            value: "Varilux"
+        },
+        {
+            no: [
+                // {name: "vision-challenge", val: "kids"},
+            ],
+            yes: [],
+            more: [],
+            less: [{
+                name: "most-day", val: 85
+            }],
+            value: "Transitions"
+        },
+        {
+            no: [
+                {name: "experience", val: "crizalsa"},
+            ],
+            yes: [],
+            more: [],
+            less: [{
+                name: "in-comp", val: 2
+            }],
+            value: "Crizal Alize"
+        },
+        {
+            no: [
+                {name: "experience", val: "crizalsa"},
+            ],
+            yes: [],
+            more: [{
+                name: "in-comp", val: 1
+            }],
+            less: [],
+            value: "Crizal Prevencia"
+        },
+        {
+            no: [
+                
+            ],
+            yes: [{name: "experience", val: "crizalsa"},],
+            more: [],
+            less: [],
+            value: "Crizal Sapphire"
+        },
+
+        //kids
+        {
+            no: [
+            ],
+            yes: [
+                {name: "vision-challenge", val: "kids"},
+                {name: "children-problem", val: "kid-near"},
+            ],
+            more: [],
+            less: [],
+            value: "Stellest"
         },
       
     ]
