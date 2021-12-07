@@ -157,9 +157,9 @@ $(document).ready(function () {
         $(".js-lens-builder__start-screen").addClass("hidden")
     })
 
-    $(".twentytwenty-handle").on("mouseout", function(event){
-        $(this).parent().find(".real-val").html($(this).css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width());
-    })
+    // $(".twentytwenty-handle").on("mouseout", function(event){
+    //     $(this).parent().find(".real-val").html($(this).css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width());
+    // })
 
     $( "#timer-range").slider({
         animate: "slow",
@@ -226,7 +226,12 @@ $(document).ready(function () {
     }
     
     function nextQuestion(toskip){
+        if (question == 3){
+            $(".most-day-real-val").html($(".twentytwenty-handle").css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width());
+
+        }
         question ++;
+        
         backBtn.removeClass("disable")
         if (toskip){
             question += Number(toskip)
@@ -240,19 +245,20 @@ $(document).ready(function () {
             nextBtn.addClass("disable")
             refresh();
         }
+        console.log ("q" + question)
+        if (question == 3){
+            $("#filter-image-wrapper").twentytwenty({
+                no_overlay: true
+            });
+        }
 
     }
-
+  
     function refresh(){
         questions.addClass("hidden");
         try {
             questions.eq(question).removeClass("hidden");
-            $("#filter-image-wrapper").twentytwenty({
-                no_overlay: true
-            });
-            $(".twentytwenty-handle").on("mouseout", function(event){
-                $(this).parent().find(".real-val").html($(this).css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width());
-            })
+            
             
             if (questions.eq(question).find("input:checked").length>0)
                 nextBtn.removeClass("disable")
