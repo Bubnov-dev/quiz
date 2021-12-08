@@ -4249,8 +4249,9 @@ body main {
     letter-spacing: 5px;
 }
 .section-heading {
-    padding: 2.125rem 0 3rem;
-    margin: 0;
+    padding: 2.125rem 0 1rem;
+    margin: 0 1.5rem 2rem;
+
     font-size: 12px;
     font-size: 0.75rem;
     line-height: 1.33333;
@@ -4259,17 +4260,9 @@ body main {
     position: relative;
     display: block;
     overflow: hidden;
-}
-.section-heading:before {
-    width: 999em;
-    width: calc(50vw + 152px);
     border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
-    margin-right: -152px;
-    position: absolute;
-    right: 50%;
-    bottom: 2.25rem;
-    content: "";
 }
+
 .section-heading.type-r:before {
     right: auto;
     left: 50%;
@@ -5510,6 +5503,7 @@ svg.plus-times-icon.medium rect {
 }
 svg.plus-times-icon .circle {
     fill: #0088ce;
+    stroke: white;
     opacity: 1;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
