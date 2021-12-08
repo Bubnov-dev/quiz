@@ -315,7 +315,9 @@ $(document).ready(function () {
         // let vals = [];
         // console.log(checkeds)
         // console.log(rvals)
-        if (vals==[]){
+    
+        if (vals.length==0){
+            console.log("ща будут результаты")
            checkeds.each(function( index, el ) {
             vals.push({name : el.getAttribute("name"), val : $(el).val()});
             });
