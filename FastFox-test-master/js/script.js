@@ -203,7 +203,7 @@ $(document).ready(function () {
         animate: "slow",
         min: 0,
         max: 12,    
-        value: 4
+        value: 0
     });
 
     $( "#timer-range" ).slider({
@@ -232,7 +232,7 @@ $(document).ready(function () {
         title= "СКОЛЬКО ЧАСОВ В ДЕНЬ ВАШ РЕБЕНОК ПРОВОДИТ ПЕРЕД ЭКРАНОМ КОМПЬЮТЕРА, ТЕЛЕФОНА, ТЕЛЕВИЗОРА И Т.Д.?";
         $("#step-4").find(".lens-builder__question-title").text(title)
 
-        titleKids = "Сталкивался ли ваш ребенок с чем-то из перечисленного?";
+        title = "Линзы для очков моего ребенка должны быть:";
         $("#step-5").find(".lens-builder__question-title").text(title)
         title = "УЧАСТВУЕТ ЛИ ВАШ РЕБЕНОК В КАКОЙ-ЛИБО ИЗ СЛЕДУЮЩИХ АКТИВНОСТЕЙ?";
         $("#step-6").find(".lens-builder__question-title").text(title)

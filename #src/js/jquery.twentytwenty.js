@@ -63,6 +63,26 @@
 
       var adjustSlider = function(pct) {
         var offset = calcOffset(pct);
+        let tmpVal = $(".twentytwenty-handle").css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width();
+        $(".most-day-real-val").html(tmpVal);
+        let text=""
+        if (tmpVal<0.15){
+            text = "Весь день на улице"
+        }
+        else if (tmpVal<0.35){
+            text = "В основном на улице"
+        }
+        else if (tmpVal<0.65){
+            text = "Часть времени в помещении, часть – на улице"
+        }
+        else if (tmpVal<0.85){
+            text = "В основном в помещении"
+        }
+        else{
+            text = "Весь день в помещении"
+        }
+        $(".most-day-front-value").html(text);
+
         slider.css((sliderOrientation==="vertical") ? "top" : "left", (sliderOrientation==="vertical") ? offset.ch : offset.cw);
         adjustContainer(offset);
       };
