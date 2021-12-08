@@ -172,7 +172,7 @@ $(document).ready(function () {
     var templateMobile = function(logo){
         return '<div class="brand-logo-mobile"><img src="'+logo+'" alt=""></div>';
     }
-   if(window.location.search!=""){
+    if(window.location.search!=""){
         var params = window
         .location
         .search
@@ -241,9 +241,9 @@ $(document).ready(function () {
     Circle('.circle');
     $(".kids-input").on("click", function(){
         let title = "ГДЕ ВАШ РЕБЕНОК ПРОВОДИТ БОЛЬШУЮ ЧАСТЬ СВОЕГО ДНЯ?"
-        $("#step-3").find(".lens-builder__question-title").text(title)
-        title= "СКОЛЬКО ЧАСОВ В ДЕНЬ ВАШ РЕБЕНОК ПРОВОДИТ ПЕРЕД ЭКРАНОМ КОМПЬЮТЕРА, ТЕЛЕФОНА, ТЕЛЕВИЗОРА И Т.Д.?";
         $("#step-4").find(".lens-builder__question-title").text(title)
+        title= "СКОЛЬКО ЧАСОВ В ДЕНЬ ВАШ РЕБЕНОК ПРОВОДИТ ПЕРЕД ЭКРАНОМ КОМПЬЮТЕРА, ТЕЛЕФОНА, ТЕЛЕВИЗОРА И Т.Д.?";
+        $("#step-3").find(".lens-builder__question-title").text(title)
 
         title = "Линзы для очков моего ребенка должны быть:";
         $("#step-5").find(".lens-builder__question-title").text(title)
@@ -278,7 +278,7 @@ $(document).ready(function () {
     
     function nextQuestion(toskip){
         console.log("next")
-        if (question == 3){
+        if (question == 4){
             $(".most-day-real-val").html($(".twentytwenty-handle").css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width());
 
         }
@@ -298,7 +298,7 @@ $(document).ready(function () {
             refresh();
         }
         console.log ("q" + question)
-        if (question == 3){
+        if (question == 4){
             $("#filter-image-wrapper").twentytwenty({
                 no_overlay: true
             });
