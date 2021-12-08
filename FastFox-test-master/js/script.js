@@ -93,6 +93,19 @@ $(document).ready(function () {
         },
         {
             no: [
+                {name: "vision-challenge", val: "kids"},
+                {name: "experience", val: "crizalsa"},
+                
+            ],
+            yes: [
+                {name: "vision-challenge-age", val: "45+"}
+            ],
+            more: [],
+            less: [],
+            value: "Crizal Prevencia"
+        },
+        {
+            no: [
                 // {name: "vision-challenge", val: "kids"},
             ],
             yes: [],
