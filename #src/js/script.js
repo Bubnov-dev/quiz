@@ -330,7 +330,7 @@ $(document).ready(function () {
       
 
         
-        let getText = window.location.origin + window.location.pathname
+        let getText = window.location.origin + window.location.pathname +"?"
         vals.forEach(val =>{
             getText += val.name+"="+val.val+"&";
         })
