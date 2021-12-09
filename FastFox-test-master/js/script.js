@@ -225,6 +225,7 @@ $(document).ready(function () {
             $(".num").html("<strong>"+ui.value+ "</strong><small> ЧАСОВ</small>");
             Circle(".circle", ui.value);   
             $(".time-slider").find(".real-val").text(ui.value);
+            $(".time-slider").find(".real-val").addClass("real-val-check");
          }
     });
 
@@ -280,6 +281,7 @@ $(document).ready(function () {
         console.log("next")
         if (question == 4){
             $(".most-day-real-val").html($(".twentytwenty-handle").css("left").replace(/[a-z]/gi, '') / $("#filter-image-wrapper").width());
+            $(".most-day-real-val").addClass("real-val-check")
 
         }
         question ++;
@@ -324,7 +326,7 @@ $(document).ready(function () {
  
     function getResult(vals=[]){
         let checkeds = $("input:checked");
-        let rvals = $(".real-val");
+        let rvals = $(".real-val-check");
         // let vals = [];
         // console.log(checkeds)
         // console.log(rvals)
