@@ -4,67 +4,67 @@ $(document).ready(function () {
 
     var brands = new Map([
         ["EyeZen" , {
-            logo : "img/Essilor_LogoBrand_Eyezen_White.png",
+            logo : "img/lensbuilder/Essilor_LogoBrand_Eyezen_White.png",
             title : "Улучшенные однофокальные линзы",
             icons : [
-                'img/icons/EYEZEN ICONS-01.svg',
-                'img/icons/EYEZEN ICONS-02.svg',
-                'img/icons/EYEZEN ICONS-03.svg'
+                'img/lensbuilder/icons/EYEZEN ICONS-01.svg',
+                'img/lensbuilder/icons/EYEZEN ICONS-02.svg',
+                'img/lensbuilder/icons/EYEZEN ICONS-03.svg'
             ]
         }],
         ["Varilux" , {
-            logo : "img/logos/Essilor_LogoBrand_Varilux_White.png",
+            logo : "img/lensbuilder/logos/Essilor_LogoBrand_Varilux_White.png",
             title : "",
             icons : [
-                'img/icons/VARILUX ICONS-01.svg',
-                'img/icons/VARILUX ICONS-02.svg',
-                'img/icons/VARILUX ICONS-03.svg',
+                'img/lensbuilder/icons/VARILUX ICONS-01.svg',
+                'img/lensbuilder/icons/VARILUX ICONS-02.svg',
+                'img/lensbuilder/icons/VARILUX ICONS-03.svg',
                 
             ]
         }],
         ["Stellest" , {
-            logo : "img/logos/Essilor_LogoBrand_Stellest_White.png",
+            logo : "img/lensbuilder/logos/Essilor_LogoBrand_Stellest_White.png",
             title : "Коррекция миопии и четкое зрение вдаль",
             icons : [
-                'img/icons/EYEZEN ICONS-02.svg',
-                'img/icons/EYEZEN ICONS-03.svg'
+                'img/lensbuilder/icons/EYEZEN ICONS-02.svg',
+                'img/lensbuilder/icons/EYEZEN ICONS-03.svg'
             ]
         }],
         ["Transitions" , {
-            logo : "img/logos/transitions_logo_white.png",
+            logo : "img/lensbuilder/logos/transitions_logo_white.png",
             title : "Легко адаптируются к меняющемуся освещению",
             icons : [
-                'img/icons/TRANSITIONS ICONS-01.svg',
-                'img/icons/TRANSITIONS ICONS-02.svg',
-                'img/icons/TRANSITIONS ICONS-03.svg',
+                'img/lensbuilder/icons/TRANSITIONS ICONS-01.svg',
+                'img/lensbuilder/icons/TRANSITIONS ICONS-02.svg',
+                'img/lensbuilder/icons/TRANSITIONS ICONS-03.svg',
             ]
         }],
         ["Crizal Alize" , {
-            logo : "img/logos/Essilor_LogoProduct_Crizal_AlizeUV_White.png",
+            logo : "img/lensbuilder/logos/Essilor_LogoProduct_Crizal_AlizeUV_White.png",
             title : "Защита от ультрафиолета и 5 врагов прозрачности линзы",
             icons : [
-                'img/icons/CRIZAL ICONS-01.svg',
-                'img/icons/CRIZAL ICONS-02.svg',
-                'img/icons/CRIZAL ICONS-03.svg'
+                'img/lensbuilder/icons/CRIZAL ICONS-01.svg',
+                'img/lensbuilder/icons/CRIZAL ICONS-02.svg',
+                'img/lensbuilder/icons/CRIZAL ICONS-03.svg'
             ]
         }],
         ["Crizal Prevencia" , {
-            logo : "img/logos/Essilor_LogoProduct_Crizal_Prevencia_White.png",
+            logo : "img/lensbuilder/logos/Essilor_LogoProduct_Crizal_Prevencia_White.png",
             title : "Защита от ультрафиолета, синего света и 5 врагов прозрачности линзы",
             icons : [
                 
-                'img/icons/CRIZAL ICONS-01.svg',
-                'img/icons/CRIZAL ICONS-02.svg',
-                'img/icons/CRIZAL ICONS-03.svg'
+                'img/lensbuilder/icons/CRIZAL ICONS-01.svg',
+                'img/lensbuilder/icons/CRIZAL ICONS-02.svg',
+                'img/lensbuilder/icons/CRIZAL ICONS-03.svg'
             ]
         }],
         ["Crizal Sapphire" , {
-            logo : "img/logos/Essilor_LogoProduct_Crizal_SapphireUV_White.png",
+            logo : "img/lensbuilder/logos/Essilor_LogoProduct_Crizal_SapphireUV_White.png",
             title : "Защита от ультрафиолета и 5 врагов прозрачности линзы",
             icons : [
-                'img/icons/CRIZAL ICONS-01.svg',
-                'img/icons/CRIZAL ICONS-02.svg',
-                'img/icons/CRIZAL ICONS-03.svg'
+                'img/lensbuilder/icons/CRIZAL ICONS-01.svg',
+                'img/lensbuilder/icons/CRIZAL ICONS-02.svg',
+                'img/lensbuilder/icons/CRIZAL ICONS-03.svg'
             ]
         }]
     ]);
