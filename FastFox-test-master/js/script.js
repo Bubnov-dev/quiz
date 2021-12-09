@@ -225,10 +225,13 @@ $(document).ready(function () {
             $(".num").html("<strong>"+ui.value+ "</strong><small> ЧАСОВ</small>");
             Circle(".circle", ui.value);   
             $(".time-slider").find(".real-val").text(ui.value);
-            $(".time-slider").find(".real-val").addClass("real-val-check");
          }
     });
 
+    $(".timer--next").on("click", function(){
+        $(".time-slider").find(".real-val").addClass("real-val-check");
+
+    })
     var Circle = function(sel, val){
         var el = document.querySelector(sel);
             var valEl = parseFloat(el.innerHTML);
