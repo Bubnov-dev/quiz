@@ -106,7 +106,7 @@ $(document).ready(function () {
         },
         {
             no: [
-                // {name: "vision-challenge", val: "kids"},
+                {name: "children-problem", val: "kid-near"},
             ],
             yes: [],
             more: [],
